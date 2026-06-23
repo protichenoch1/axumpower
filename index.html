@@ -7,39 +7,79 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial;
-      background: #0f172a;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #020617, #0f172a);
       color: white;
     }
 
     .header {
       padding: 20px;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header span {
+      font-weight: bold;
       font-size: 22px;
+    }
+
+    .balance-card {
+      margin: 15px;
+      padding: 25px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .balance-title {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .balance-amount {
+      font-size: 32px;
+      margin-top: 10px;
       font-weight: bold;
     }
 
-    .card {
-      background: #1e293b;
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .actions button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .deposit {
+      background: #020617;
+      color: white;
+    }
+
+    .withdraw {
+      background: white;
+      color: #020617;
+    }
+
+    .section {
       margin: 15px;
       padding: 20px;
       border-radius: 15px;
-      text-align: center;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
     }
 
-    .balance {
-      font-size: 30px;
-      margin-top: 10px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 12px;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      background: #22c55e;
-      color: white;
-      font-size: 16px;
+    .section h3 {
+      margin: 0 0 10px 0;
     }
 
     .nav {
@@ -47,35 +87,57 @@
       bottom: 0;
       width: 100%;
       display: flex;
-      background: #1e293b;
+      background: rgba(15,23,42,0.95);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     .nav div {
       flex: 1;
-      padding: 15px;
+      padding: 12px;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
+      opacity: 0.7;
     }
+
+    .nav div.active {
+      color: #22c55e;
+      opacity: 1;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <div class="header">Axum Power</div>
-
-  <div class="card">
-    <div>Account Balance</div>
-    <div id="balance" class="balance">$100</div>
-    <button onclick="deposit()">Deposit</button>
+  <div class="header">
+    <span>Axum Power</span>
+    <div>🔔</div>
   </div>
 
-  <div class="card">
-    <div>Investments</div>
+  <div class="balance-card">
+    <div class="balance-title">Total Balance</div>
+    <div id="balance" class="balance-amount">$100.00</div>
+
+    <div class="actions">
+      <button class="deposit" onclick="deposit()">Deposit</button>
+      <button class="withdraw" onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Investments</h3>
     <p>No active investments</p>
   </div>
 
+  <div class="section">
+    <h3>Recent Activity</h3>
+    <p>No transactions yet</p>
+  </div>
+
   <div class="nav">
-    <div>Home</div>
+    <div class="active">Home</div>
     <div>Invest</div>
     <div>Wallet</div>
     <div>Profile</div>
