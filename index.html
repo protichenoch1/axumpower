@@ -2,20 +2,86 @@
 <html>
 <head>
   <title>Axum Power</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    .header {
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .card {
+      background: #1e293b;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .balance {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      background: #22c55e;
+      color: white;
+      font-size: 16px;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background: #1e293b;
+    }
+
+    .nav div {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>Axum Power</header>
+  <div class="header">Axum Power</div>
 
-<div class="container">
-  <h1>Welcome to Axum Power</h1>
-  <p>Grow your funds securely and globally.</p>
+  <div class="card">
+    <div>Account Balance</div>
+    <div id="balance" class="balance">$100</div>
+    <button onclick="deposit()">Deposit</button>
+  </div>
 
-  <a href="login.html">
-    <button>Get Started</button>
-  </a>
-</div>
+  <div class="card">
+    <div>Investments</div>
+    <p>No active investments</p>
+  </div>
+
+  <div class="nav">
+    <div>Home</div>
+    <div>Invest</div>
+    <div>Wallet</div>
+    <div>Profile</div>
+  </div>
+
+  <script src="app.js"></script>
 
 </body>
 </html>
