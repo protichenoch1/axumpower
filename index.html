@@ -111,30 +111,60 @@
 
 <body>
 
-  <div class="header">
-    <span>Axum Power</span>
-    <div>🔔</div>
-  </div>
+  <!-- HOME SCREEN -->
+  <div id="home">
 
-  <div class="balance-card">
-    <div class="balance-title">Total Balance</div>
-    <div id="balance" class="balance-amount">$100.00</div>
-
-    <div class="actions">
-      <button class="deposit" onclick="deposit()">Deposit</button>
-      <button class="withdraw" onclick="withdraw()">Withdraw</button>
+    <div class="header">
+      <span>Axum Power</span>
+      <div>🔔</div>
     </div>
+
+    <div class="balance-card">
+      <div class="balance-title">Total Balance</div>
+      <div id="balance" class="balance-amount">$100.00</div>
+
+      <div class="actions">
+        <button class="deposit" onclick="openDeposit()">Deposit</button>
+        <button class="withdraw" onclick="withdraw()">Withdraw</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Investments</h3>
+      <p>No active investments</p>
+    </div>
+
   </div>
 
-  <div class="section">
-    <h3>Investments</h3>
-    <p>No active investments</p>
+
+  <!-- DEPOSIT SCREEN -->
+  <div id="depositScreen" style="display:none;">
+
+    <div class="header">
+      <span onclick="goBack()" style="cursor:pointer;">← Back</span>
+    </div>
+
+    <div class="section">
+      <h3>Select Deposit Method</h3>
+
+      <div class="method" onclick="selectMethod('mpesa')">
+        📱 M-Pesa
+      </div>
+
+      <div class="method" onclick="selectMethod('crypto')">
+        🪙 Crypto (USDT/BTC)
+      </div>
+
+      <div class="method" onclick="selectMethod('paypal')">
+        💳 PayPal / Card
+      </div>
+
+    </div>
+
+    <div id="methodDetails"></div>
+
   </div>
 
-  <div class="section">
-    <h3>Recent Activity</h3>
-    <p>No transactions yet</p>
-  </div>
 
   <div class="nav">
     <div class="active">Home</div>
