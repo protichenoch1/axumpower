@@ -5,7 +5,6 @@ export default function Deposit() {
         Deposit Funds
       </h1>
 
-      {/* Amount */}
       <div className="bg-white rounded-2xl shadow p-5 mb-5">
         <label className="block text-gray-700 mb-2">
           Deposit Amount (USD)
@@ -18,7 +17,6 @@ export default function Deposit() {
         />
       </div>
 
-      {/* Payment Method */}
       <div className="bg-white rounded-2xl shadow p-5 mb-5">
         <h2 className="font-semibold text-lg mb-4">
           Select Payment Method
@@ -33,6 +31,35 @@ export default function Deposit() {
         </button>
       </div>
 
-      {/* Manual Payment */}
       <div className="bg-white rounded-2xl shadow p-5 mb-5">
-        <h2 className="font-semibold text
+        <h2 className="font-semibold text-lg mb-3">
+          Manual Payment
+        </h2>
+
+        <p className="text-gray-600 mb-3">
+          After sending your payment, enter your transaction ID below.
+        </p>
+
+        <input
+          type="text"
+          placeholder="Transaction ID"
+          className="w-full border rounded-xl p-3 mb-4"
+        />
+
+        <button className="w-full bg-[#00796B] text-white py-3 rounded-xl">
+          Submit Deposit
+        </button>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow p-5">
+        <h2 className="font-semibold text-lg mb-3">
+          Deposit Status
+        </h2>
+
+        <p className="text-gray-500">
+          No pending deposits.
+        </p>
+      </div>
+    </main>
+  );
+}
