@@ -1,119 +1,178 @@
 export default function Home() {
   const vipPlans = [
-    {
-      vip: "VIP 1",
-      unlock: "$10",
-      daily: "$1",
-      period: "60 Days",
-      total: "$60",
-    },
-    {
-      vip: "VIP 2",
-      unlock: "$25",
-      daily: "$1.75",
-      period: "60 Days",
-      total: "$105",
-    },
-    {
-      vip: "VIP 3",
-      unlock: "$35",
-      daily: "$2.50",
-      period: "60 Days",
-      total: "$150",
-    },
-    {
-      vip: "VIP 4",
-      unlock: "$45",
-      daily: "$3.50",
-      period: "60 Days",
-      total: "$210",
-    },
-    {
-      vip: "VIP 5",
-      unlock: "$60",
-      daily: "$5",
-      period: "60 Days",
-      total: "$300",
-    },
+    { vip: "VIP 1", unlock: "$10", daily: "$1", period: "60 Days", total: "$60" },
+    { vip: "VIP 2", unlock: "$25", daily: "$1.75", period: "60 Days", total: "$105" },
+    { vip: "VIP 3", unlock: "$35", daily: "$2.50", period: "60 Days", total: "$150" },
+    { vip: "VIP 4", unlock: "$45", daily: "$3.50", period: "60 Days", total: "$210" },
+    { vip: "VIP 5", unlock: "$60", daily: "$5.00", period: "60 Days", total: "$300" },
   ];
 
   return (
-    <main className="min-h-screen bg-[#EAF4F4] pb-24">
-
+    <div
+      style={{
+        background: "#EAF4F4",
+        minHeight: "100vh",
+        paddingBottom: "100px",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
       {/* Header */}
-      <div className="bg-[#00796B] text-white p-5 shadow-lg">
-        <h1 className="text-3xl font-bold">Axum Power</h1>
-        <p className="text-sm opacity-80">
-          Welcome to Axum Power
+      <div
+        style={{
+          background: "#00796B",
+          color: "white",
+          padding: "20px",
+          borderBottomLeftRadius: "20px",
+          borderBottomRightRadius: "20px",
+        }}
+      >
+        <h1 style={{ margin: 0 }}>Axum Power</h1>
+        <p style={{ marginTop: "8px" }}>
+          Powering Your Financial Future
         </p>
       </div>
 
-      {/* Balance */}
-      <div className="m-4 bg-[#00796B] rounded-3xl text-white p-6 shadow-xl">
-        <p className="text-sm">Available Balance</p>
+      {/* Balance Card */}
+      <div
+        style={{
+          background: "white",
+          margin: "15px",
+          padding: "20px",
+          borderRadius: "20px",
+          boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+        }}
+      >
+        <h3>Available Balance</h3>
 
-        <h2 className="text-4xl font-bold mt-2">
+        <h1
+          style={{
+            color: "#00796B",
+            marginTop: "10px",
+          }}
+        >
           $0.00
-        </h2>
+        </h1>
 
-        <div className="grid grid-cols-2 gap-3 mt-6">
-          <button className="bg-white text-[#00796B] py-3 rounded-xl font-bold">
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            marginTop: "20px",
+          }}
+        >
+          <button
+            style={{
+              flex: 1,
+              background: "#00796B",
+              color: "white",
+              border: "none",
+              padding: "12px",
+              borderRadius: "10px",
+            }}
+          >
             Deposit
           </button>
 
-          <button className="bg-[#C9A227] py-3 rounded-xl font-bold">
+          <button
+            style={{
+              flex: 1,
+              background: "#C9A227",
+              color: "white",
+              border: "none",
+              padding: "12px",
+              borderRadius: "10px",
+            }}
+          >
             Withdraw
           </button>
         </div>
       </div>
 
       {/* VIP Plans */}
-      <div className="px-4">
-        <h2 className="text-2xl font-bold text-[#00796B] mb-4">
+      <div style={{ padding: "15px" }}>
+        <h2
+          style={{
+            color: "#00796B",
+            marginBottom: "15px",
+          }}
+        >
           VIP Plans
         </h2>
 
         {vipPlans.map((plan) => (
           <div
             key={plan.vip}
-            className="bg-white rounded-2xl shadow-lg p-4 mb-5"
+            style={{
+              background: "white",
+              borderRadius: "20px",
+              padding: "15px",
+              marginBottom: "20px",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+            }}
           >
-            <div className="flex gap-4">
-
-              <div className="w-24 h-24 rounded-xl bg-[#00796B] flex items-center justify-center text-white font-bold text-xl">
+            <div
+              style={{
+                display: "flex",
+                gap: "15px",
+              }}
+            >
+              <div
+                style={{
+                  width: "90px",
+                  height: "90px",
+                  background: "#00796B",
+                  borderRadius: "15px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "40px",
+                }}
+              >
                 🚀
               </div>
 
-              <div className="flex-1">
-
-                <h3 className="text-xl font-bold text-[#00796B]">
+              <div style={{ flex: 1 }}>
+                <h3
+                  style={{
+                    color: "#00796B",
+                    marginTop: 0,
+                  }}
+                >
                   {plan.vip}
                 </h3>
 
-                <p>Daily Return: <b>{plan.daily}</b></p>
+                <p><b>Daily Return:</b> {plan.daily}</p>
 
-                <p>Period: <b>{plan.period}</b></p>
+                <p><b>Period:</b> {plan.period}</p>
 
-                <p>Total Return: <b>{plan.total}</b></p>
+                <p><b>Total Return:</b> {plan.total}</p>
 
                 <p>
-                  Unlock Price:
-                  <span className="font-bold text-[#C9A227]">
-                    {" "}{plan.unlock}
+                  <b>Unlock Price:</b>{" "}
+                  <span style={{ color: "#C9A227" }}>
+                    {plan.unlock}
                   </span>
                 </p>
 
-                <button className="mt-3 w-full bg-[#00796B] text-white py-2 rounded-xl font-bold">
+                <button
+                  style={{
+                    width: "100%",
+                    marginTop: "10px",
+                    background: "#00796B",
+                    color: "white",
+                    border: "none",
+                    padding: "12px",
+                    borderRadius: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
                   Unlock Now
                 </button>
-
               </div>
-
             </div>
           </div>
         ))}
       </div>
-
-    </main>
+    </div>
   );
-    }
+          }
